@@ -37,8 +37,8 @@ colum = mc.columnLayout()
 
 mc.rowLayout(nc=2)
 rC1 = mc.radioCollection()
-mode_add = mc.radioButton('mode_add', l='add', select=True, onc='add_mode()')
-mode_serial = mc.radioButton('mode_serial', l='serial', onc='serial_mode()')
+mode_add = mc.radioButton('mode_add', l='add', select=True)
+mode_serial = mc.radioButton('mode_serial', l='serial')
 mc.setParent('..')
 
 mc.rowLayout(nc=2)
