@@ -54,6 +54,6 @@ Num = mc.radioButton('Num', l='Number')
 mc.setParent('..')
 
 txt = mc.textFieldGrp(l='name:', ed=True, pht='please input text...')
-mc.button(l='Done', c='processing()')
+mc.button(l='Rename', c='processing()')
 
 mc.showWindow()
