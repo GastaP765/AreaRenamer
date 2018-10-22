@@ -4,6 +4,7 @@ Acode = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 def rename():
 	sl_name = mc.ls(sl=True)
+	cnt = len(sl_name)
 
 	e = 0
 	f = 0
@@ -44,7 +45,7 @@ def rename():
 						f = f + 1
 						t = Acode[f]
 			else:
-				e = e + 1 
+				e = e + 1
 
 	elif aon == 'num':
 		for i in range(cnt):
