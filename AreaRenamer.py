@@ -23,12 +23,10 @@ def rename():
 		ns1 = ''
 	if afn == '':
 		ns2 = ''
-	if ctn == '':
-		mc.warning('Base name is not specified')
 
 	if aon == 'alp':
-		for i in sl_name:
-			mc.rename(i, frn + ns1 + ctn + h + t + Acode[e] + ns2 + afn)
+		for i in range(cnt):
+			mc.rename(sl_name[i], frn + ns1 + ctn + h + t + Acode[e] + ns2 + afn)
 			if e == 25:
 				e = 0
 				if t == '':
@@ -46,11 +44,18 @@ def rename():
 						t = Acode[f]
 			else:
 				e = e + 1
+			sl_name = mc.ls(sl=True)
 
 	elif aon == 'num':
 		for i in range(cnt):
 			j = str(i+1)
 			mc.rename(sl_name[i], frn + ns1 + ctn + j + ns2 + afn)
+			sl_name = mc.ls(sl=True)
+
+	elif aon == 'none':
+		for i in range(cnt):
+			mc.rename(sl_name[i], frn + ns1 + ctn + ns2 + afn)
+			sl_name = mc.ls(sl=True)
 
 
 if mc.window('AreaRenamer', exists=True):
@@ -60,10 +65,11 @@ win = mc.window('AreaRenamer', t='AreaRenamer', mxb=False, widthHeight=(300,150)
 mc.columnLayout(adj=True)
 
 mc.frameLayout(l='Serial, Alphabet or Number')
-mc.rowLayout(nc=2, cat=[(1, 'left',50), (2, 'left', 50)])
+mc.rowLayout(nc=3, cat=[(1, 'left',20), (2, 'left', 20), (3, 'left', 20)])
 rc1 = mc.radioCollection()
 rb1 = mc.radioButton('alp', l='Alphabet', sl=True,)
 rb2 = mc.radioButton('num', l='Number')
+rb3 = mc.radioButton('none', l='None')
 mc.setParent('..')
 
 mc.frameLayout(l='setName')
