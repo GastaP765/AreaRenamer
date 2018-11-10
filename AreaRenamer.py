@@ -53,9 +53,7 @@ def rename():
 			sl_name = mc.ls(sl=True)
 
 	elif aon == 'none':
-		for i in range(cnt):
-			mc.rename(sl_name[i], frn + ns1 + ctn + ns2 + afn)
-			sl_name = mc.ls(sl=True)
+		mc.rename(sl_name[0], frn + ns1 + ctn + ns2 + afn)
 
 
 if mc.window('AreaRenamer', exists=True):
