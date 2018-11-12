@@ -24,8 +24,13 @@ def rename():
 	if afn == '':
 		ns2 = ''
 
-	if aon == 'alp':
+	if ctn == '':
 		for i in range(cnt):
+			mc.rename(sl_name[i], frn + ns1 + sl_name[i]+ ns2 + afn)
+		return
+
+	if aon == 'alp':
+		for i in range(cnt):				
 			mc.rename(sl_name[i], frn + ns1 + ctn + h + t + Acode[e] + ns2 + afn)
 			if e == 25:
 				e = 0
