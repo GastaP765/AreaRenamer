@@ -74,9 +74,9 @@ def mainWin():
 	if mc.window('AreaRenamer', exists=True):
 		mc.deleteUI('AreaRenamer')
 
-	win = mc.window('AreaRenamer', t='AreaRenamer', mxb=False, widthHeight=(300,150))
+	win = mc.window('AreaRenamer', t='AreaRenamer', s=False, mxb=False, widthHeight=(300,140))
 	mc.columnLayout(adj=True)
-	mc.window('AreaRenamer', e=True, widthHeight=(300,150))
+	mc.window('AreaRenamer', e=True, widthHeight=(300,140))
 
 	mc.frameLayout(l='Serial, Alphabet or Number')
 	mc.rowLayout(nc=3, cat=[(1, 'left',20), (2, 'left', 20), (3, 'left', 20)])
