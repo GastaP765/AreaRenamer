@@ -70,6 +70,7 @@ def rename():
 		mc.rename(sl_name[0], frn + ns1 + ctn + ns2 + afn)
 
 def mainWin():
+	global rc1, name1, name2, name3
 	if mc.window('AreaRenamer', exists=True):
 		mc.deleteUI('AreaRenamer')
 
@@ -80,9 +81,9 @@ def mainWin():
 	mc.frameLayout(l='Serial, Alphabet or Number')
 	mc.rowLayout(nc=3, cat=[(1, 'left',20), (2, 'left', 20), (3, 'left', 20)])
 	rc1 = mc.radioCollection()
-	rb1 = mc.radioButton('alp', l='Alphabet', sl=True,)
-	rb2 = mc.radioButton('num', l='Number')
-	rb3 = mc.radioButton('none', l='None')
+	mc.radioButton('alp', l='Alphabet', sl=True,)
+	mc.radioButton('num', l='Number')
+	mc.radioButton('none', l='None')
 	mc.setParent('..')
 
 	mc.frameLayout(l='setName')
