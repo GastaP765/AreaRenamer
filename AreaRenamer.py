@@ -2,7 +2,7 @@ import maya.cmds as mc
 
 Acode = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
-def rename():
+def rename(*args):
 	sl_name = mc.ls(sl=True)
 	cnt = len(sl_name)
 
@@ -95,7 +95,11 @@ def mainWin():
 	name3 = mc.textField('name3', w=95, pht='AfterName')
 	mc.setParent('..')
 
-	mc.button(w=200, h=30, l='rename', c='rename()')
+	mc.button(w=200, h=30, l='rename', c=rename)
 
 	mc.showWindow(win)
-mainWin()
+
+def consoleKey():
+	mainWin()
+
+consoleKey()
